@@ -1,0 +1,191 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.coptercontorl.user.MainActivity" >
+
+    <Button
+        android:id="@+id/right"
+        style="?android:attr/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/front"
+        android:layout_toRightOf="@+id/front"
+        android:text="→" />
+
+    <Button
+        android:id="@+id/up"
+        style="?android:attr/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/front"
+        android:layout_alignBottom="@+id/front"
+        android:layout_alignParentRight="true"
+        android:text="up" />
+
+    <Button
+        android:id="@+id/down"
+        style="?android:attr/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/up"
+        android:layout_below="@+id/right"
+        android:text="down" />
+
+    <Button
+        android:id="@+id/left"
+        style="?android:attr/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/back"
+        android:layout_alignParentLeft="true"
+        android:text="←" />
+
+    <Button
+        android:id="@+id/back"
+        style="?android:attr/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/down"
+        android:layout_alignBottom="@+id/down"
+        android:layout_toRightOf="@+id/left"
+        android:text="↓" />
+
+    <Button
+        android:id="@+id/front"
+        style="?android:attr/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/left"
+        android:text="↑" />
+    
+    <TextView
+        android:id="@+id/bluetoothtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textColor="#ff0000"
+        android:layout_below="@+id/networktext"
+        android:text="BLUETOOTH : N"
+        android:maxLines="1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/batterytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textColor="#ff0000"
+        android:layout_below="@+id/bluetoothtext"
+        android:text="BARTTERY : N"
+        android:maxLines="1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/gyroy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/gyrox"
+        android:layout_below="@+id/gyrox"
+        android:text="Y : 000000.00000" />
+
+    <TextView
+        android:id="@+id/gyroz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/gyroy"
+        android:layout_below="@+id/gyroy"
+        android:text="Z : 000000.00000" />
+
+    <TextView
+        android:id="@+id/networktext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bluetoothtext"
+        android:layout_below="@+id/back"
+        android:maxLines="1"
+        android:text="NETWORK : N"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ff0000" />
+
+    <TextView
+        android:id="@+id/motor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/gyroz"
+        android:layout_marginTop="14dp"
+        android:text="MOTOR1 : 0" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/motor1"
+        android:layout_below="@+id/motor1"
+        android:text="MOTOR1 : 0" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView01"
+        android:layout_below="@+id/TextView01"
+        android:text="MOTOR1 : 0" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView02"
+        android:layout_below="@+id/TextView02"
+        android:text="MOTOR1 : 0" />
+
+    <TextView
+        android:id="@+id/gyrox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/batterytext"
+        android:layout_below="@+id/batterytext"
+        android:layout_marginTop="14dp"
+        android:text="X : 000000.00000" />
+
+    <TextView
+        android:id="@+id/motor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/motor1"
+        android:layout_alignBottom="@+id/motor1"
+        android:layout_toRightOf="@+id/bluetoothtext"
+        android:text="MOTOR2 : 0" />
+
+    <TextView
+        android:id="@+id/TextView05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView02"
+        android:layout_alignLeft="@+id/motor2"
+        android:text="MOTOR1 : 0" />
+
+    <TextView
+        android:id="@+id/TextView06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView07"
+        android:layout_alignLeft="@+id/TextView05"
+        android:text="MOTOR1 : 0" />
+
+    <TextView
+        android:id="@+id/TextView07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView06"
+        android:layout_below="@+id/TextView02"
+        android:text="MOTOR1 : 0" />
+
+</RelativeLayout>
