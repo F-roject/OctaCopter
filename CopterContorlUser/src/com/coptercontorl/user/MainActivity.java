@@ -4,7 +4,10 @@ package com.coptercontorl.user;
 import android.support.v7.app.ActionBarActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,11 +18,14 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-		if (!mBluetoothAdapter.isEnabled()) {
-		    Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-		    startActivityForResult(enableBtIntent, 1);
-		}
+		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		    NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+		    if (!(networkInfo != null && networkInfo.isConnected())) {
+		    	//네트워크 연결이 안되있다면 메세지를 보내라
+		    	moveTaskToBack(true);
+		    	finish();
+		    	android.os.Process.killProcess(android.os.Process.myPid());
+		    }
 	}
 
 	@Override
@@ -40,4 +46,5 @@ public class MainActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	public void OnItemClickListener(){}//버튼별 입력도 추가하장
 }
