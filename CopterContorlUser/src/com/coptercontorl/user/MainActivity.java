@@ -1,9 +1,6 @@
 package com.coptercontorl.user;
 
 
-import android.support.v7.app.ActionBarActivity;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -11,21 +8,73 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.*;
+import android.widget.AdapterView.*;
+import android.widget.*;
+import android.view.*;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-		    NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-		    if (!(networkInfo != null && networkInfo.isConnected())) {
-		    	//네트워크 연결이 안되있다면 메세지를 보내라
-		    	moveTaskToBack(true);
-		    	finish();
-		    	android.os.Process.killProcess(android.os.Process.myPid());
-		    }
+		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+		if (!(networkInfo != null && networkInfo.isConnected())) {
+		    //send network not connected dialog
+		    moveTaskToBack(true);
+		    finish();
+		    android.os.Process.killProcess(android.os.Process.myPid());
+		}
+		Button up = (Button) findViewById(R.id.up);
+		up.setOnClickListener(
+			new View.OnClickListener() {
+				public void onClick(View v) {
+					// Perform action on click
+				}
+			}
+		);
+		Button down = (Button) findViewById(R.id.down);
+		down.setOnClickListener(
+			new View.OnClickListener() {
+				public void onClick(View v) {
+					// Perform action on click
+				}
+			}
+		);
+		Button left = (Button) findViewById(R.id.left);
+		left.setOnClickListener(
+			new View.OnClickListener() {
+				public void onClick(View v) {
+					// Perform action on click
+				}
+			}
+		);
+		Button right = (Button) findViewById(R.id.right);
+		right.setOnClickListener(
+			new View.OnClickListener() {
+				public void onClick(View v) {
+					// Perform action on click
+				}
+			}
+		);
+		Button front = (Button) findViewById(R.id.front);
+		front.setOnClickListener(
+			new View.OnClickListener() {
+				public void onClick(View v) {
+					// Perform action on click
+				}
+			}
+		);
+		Button back = (Button) findViewById(R.id.back);
+		back.setOnClickListener(
+			new View.OnClickListener() {
+				public void onClick(View v) {
+					// Perform action on click
+				}
+			}
+		);
 	}
 
 	@Override
@@ -46,5 +95,4 @@ public class MainActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public void OnItemClickListener(){}//버튼별 입력도 추가하장
 }
